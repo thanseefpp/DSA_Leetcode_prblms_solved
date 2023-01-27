@@ -8,9 +8,8 @@ class ListNode:
         
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
-        
         carry = 0
-        result = ListNode(0)
+        result = ListNode()
         pointer = result
         
         while l1 or l2 or carry:
@@ -18,9 +17,8 @@ class Solution:
             secondNum = l2.val if l2 else 0
             
             total = firstNum + secondNum + carry
+            carry = total // 10
             number = total % 10
-            carry = number // 10
-            
             pointer.next = ListNode(number)
             pointer = pointer.next
             
@@ -29,4 +27,5 @@ class Solution:
             
         return result.next
       
-      
+    
+# obj = 
